@@ -11,4 +11,4 @@ COPY src/Main.java /code/Main.java
 RUN javac Main.java
 
 # Default command: run the compiled Main class
-CMD ["java", "Main"]
+CMD ["java", "Main"]     #which can be override while run command 

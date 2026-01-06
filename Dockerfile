@@ -1,19 +1,14 @@
-# stable official Java runtime base image
-FROM openjdk:17-jdk-alpine
+# Base image: Eclipse Temurin JDK 17 on Alpine Linux (stable, lightweight ~200MB)
+FROM eclipse-temurin:17-jdk-alpine
 
-# metadata
-LABEL maintainer="your-email@example.com"
-LABEL version="1.0"
-LABEL description="A simple Java application"
+# Set working directory inside container to /code
+WORKDIR /code
 
-# working directory
-WORKDIR /app
+# Copy entire project directory (source files) from host to container
+COPY src/Main.java /code/Main.java
 
-# Copy source code into the container
-COPY src/Main.java /app/Main.java
-
-# Compile the Java code
+# Compile Java source code to bytecode
 RUN javac Main.java
 
-# Run the Java application when the container starts
+# Default command: run the compiled Main class
 CMD ["java", "Main"]

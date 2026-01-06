@@ -10,5 +10,5 @@ COPY src/Main.java /code/Main.java
 # Compile Java source code to bytecode
 RUN javac Main.java
 
-# Default command: run the compiled Main class
-CMD ["java", "Main"]     #which can be override while run command 
+# Default command: run the compiled Main class 
+CMD ["java", "Main"]     
